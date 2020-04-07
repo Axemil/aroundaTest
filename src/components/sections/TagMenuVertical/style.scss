@@ -1,0 +1,31 @@
+.wrapper {
+  grid-column: 3 / -3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+
+  & svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  @media (max-width: 490px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.arrow {
+  width: 10px;
+  height: 10px;
+}
+
+.subscribe {
+  margin: 0;
+
+  @media (max-width: 490px) {
+    margin-top: 30px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,11 @@
+.hero{
+	composes: section from global;
+	min-height: 100vh;
+	padding: 304px 0 100px;
+}
+.container{
+	grid-column: var(--newWidth);
+}
+.heroTitle{
+	
+}

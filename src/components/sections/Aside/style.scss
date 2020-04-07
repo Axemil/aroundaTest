@@ -1,0 +1,209 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
+
+.aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 90vh;
+  width: 100%;
+  background: #fff;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 42px 0 rgba(99, 98, 98, 0.1);
+  opacity: 0.4;
+  transform: translateY(-110%);
+  transition: all 0.4s ease-in-out;
+  &.active {
+    opacity: 1;
+    transform: translateY(0);
+    .wrapper {
+      opacity: 1;
+      transition: opacity 0.3s 0.4s ease-in-out;
+    }
+  }
+  @media (max-width: $minDesktop) {
+    min-height: 100vh;
+  }
+}
+
+.wrapper {
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 190px 0 0;
+  opacity: 0;
+
+  transition: opacity 0.3s 0s ease-in-out;
+  @media (max-width: $maxTablet) {
+    padding: 182px 0 0;
+  }
+  @media (max-width: $maxMobile) {
+    padding: 136px 0 0;
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  transition: all 0.3s $cubic;
+  grid-column: 7 / span 18;
+  @media (max-width: $maxLaptop) {
+    grid-column: 6 / span 18;
+  }
+  @media (max-width: $maxTablet) {
+    grid-column: 4 / span 23;
+  }
+  @media (max-width: $maxMobile){
+    justify-content: flex-start;
+    grid-column: var(--tabletWidth);
+    margin: 0 0 60px;
+  }
+  li {
+    position: relative;
+    padding: 4px 23px 0 0;
+    transform: translateY(20px);
+    opacity: 0;
+    visibility: hidden;
+    &:not(:last-of-type) {
+      margin: 0 0 58px;
+      @media (max-width: $maxLaptop) {
+        margin: 0 0 54px;
+      }
+      @media (max-width: $maxTablet) {
+        margin: 0 0 40px;
+      }
+      @media (max-width: $maxMobile) {
+        margin: 0 0 30px;
+      }
+    }
+    @media (max-width: $maxTablet) {
+      margin: 0 0 24px;
+    }
+    .desc {
+      position: absolute;
+      top: 54%;
+      left: -114%;
+      letter-spacing: -0.4px;
+      @include font(16px, 14px, $minDesktop, $maxTablet);
+      display: inline;
+      opacity: 0;
+      transform: translateY(-50%);
+      transition: all 0.3s $cubic;
+      @media (max-width: $maxTablet) {
+        left: -135%;
+      }
+      @media (max-width: $maxMobile) {
+        display: none;
+      }
+      &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: #fff;
+        top: 0;
+        right: 0;
+        transition: all 0.3s $cubic;
+      }
+    }
+    .link {
+      display: inline-block;
+      transition: all 0.3s $cubic;
+    }
+    &:hover {
+      .link {
+        transform: translateX(20px);
+        &:before {
+          width: 65%;
+        }
+      }
+      .desc {
+        opacity: 1;
+        &:after {
+          width: 0;
+        }
+      }
+    }
+    &.disable{
+      pointer-events: none;
+      color: $lightGray;
+    }
+  }
+}
+.link {
+  @include font(50px, 30px, $minDesktop, $maxMobile);
+  transition: all 0.3s $cubic;
+  position: relative;
+  z-index: 10;
+  line-height: 1;
+  color: inherit;
+  &:before {
+    content: '';
+    left: -20px;
+    top: -2px;
+    background: $lightGreen;
+    width: 0;
+    height: 90%;
+    transition: all 0.3s $cubic;
+    z-index: -1;
+    position: absolute;
+    opacity: 0.7;
+  }
+}
+.socials {
+  grid-column: -17/-10;
+  padding: 16px 0 0;
+  li {
+    margin: 0 0 24px;
+    transform: translateY(20px);
+    opacity: 0;
+    visibility: hidden;
+    a {
+      text-decoration: underline;
+      text-transform: capitalize;
+    }
+  }
+  @media (max-width: $maxMobile) {
+    display: none;
+  }
+  @media (max-width: $maxLaptop) {
+    grid-column: -16/-10;
+  }
+  @media (max-width: $maxTablet) {
+    grid-column: -14/-8;
+  }
+}
+
+.socialsMobile{
+  grid-row: 2 / 3;
+  grid-column: var(--tabletWidth);
+  display: flex;
+  align-items: center;
+  border-top: 1px solid $lightGray;
+  justify-content: space-between;
+  padding: 16px 0;
+  .socialText{
+    letter-spacing: -0.4px;
+  }
+  ul{
+    display: flex;
+    a{
+      line-height: 0;
+    }
+    li{
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      background: $lightGray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:not(:last-child){
+        margin: 0 10px 0 0;
+      }
+    }
+  }
+}

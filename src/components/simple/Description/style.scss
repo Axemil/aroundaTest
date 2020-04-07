@@ -1,0 +1,14 @@
+@import '../../../scss/variables.scss';
+
+.desc{
+    font-weight: 400;
+    line-height: 1.68;
+    font-size: 19px;
+    &.light{
+        color: $darkGray;
+    }
+    @media (max-width: $maxMobile) {
+        line-height: 1.48;
+        font-size: 16px;
+    }
+}
