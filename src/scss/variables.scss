@@ -1,3 +1,18 @@
+
+:root {
+	--cells: 48;
+	--cellSize: calc(100vw / var(--cells));
+	--spacing: calc(var(--cellSize) * 8);
+	--desktopWidth: 8 / -8;
+	--tabletWidth: 4 / -4;
+	--newWidth: 6 / -6;
+}
+
+:root{
+	--black: #141515;
+}
+
+
 //color
 $black: #111212;
 $gray: #9FA4A6;

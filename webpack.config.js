@@ -71,7 +71,7 @@ module.exports = {
 			},
 			{
 				// Match woff2 in addition to patterns like .woff?v=1.1.1.
-				test: /\.(woff|woff2|otf|ttf)(\?v=\d+\.\d+\.\d+)?$/,
+				test: /\.(woff|woff2|otf|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
 				use: {
 					loader: "url-loader",
 					options: {
