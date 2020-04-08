@@ -6,15 +6,17 @@
 	padding: 304px 0 100px;
 }
 .container{
-	grid-column: var(--newWidth);
+	grid-column: var(--mainWidth);
 }
+.heroContent{
+	max-width: 854px;
+}	
 .heroTitle{
 	font-size: 70px;
 	font-weight: 500;
-	max-width: 874px;
 	margin: 0 0 20px;
 }
-.hero p{
-	max-width: 874px;
+.heroDesc{
 	font-size: 22px;
+	line-height: 1.8;
 }

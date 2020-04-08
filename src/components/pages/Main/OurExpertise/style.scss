@@ -1,0 +1,36 @@
+.ourExpertise{
+	display: inherit;
+	grid-template-columns: inherit;
+	grid-column: 1 / -1;
+	padding: 232px 0;
+}
+.container{
+	width: 100%;
+	grid-column: var(--mainWidth);
+	max-width: 910px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.contentWrapper{
+	max-width: 490px;
+	margin-right: 30px;
+}
+.contentTitle{
+	margin: 0 0 30px;
+}
+.contentDesc{
+	margin: 0 0 72px;
+	font-size: var(--fsL);
+}
+.listTitle{
+	margin: 0 0 16px;
+}
+.listItems li{
+	margin: 0 0 10px;
+}
+.listItems a{
+	border-bottom: 3px solid var(--gray400);
+	font-size: var(--fsL);
+}

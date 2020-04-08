@@ -1,4 +1,5 @@
 @import "./scss/reset.scss";
+@import "./scss/fonts.scss";
 @import "./scss/variables.scss";
 @import "./scss/mixins.scss";
 
@@ -15,8 +16,11 @@ body {
 	overflow-x: hidden;
 }
 
+h1,h2,h3,h4,h5,h6{
+	margin: 0;
+}
+
 button {
-	outline: red;
 	cursor: pointer;
 }
 
@@ -25,16 +29,11 @@ video {
 	max-width: 100%;
 }
 
-* {
+button, a, input {
 	outline: none;
 }
 
 :global {
-	.section{
-		display: inherit;
-		grid-template-columns: inherit;
-		grid-column: 1 / -1;
-	}
 	#app {
 		min-height: inherit;
 	}

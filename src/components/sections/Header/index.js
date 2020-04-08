@@ -1,8 +1,12 @@
-import React, { Component } from "react"
-import { TimelineMax, Power4 } from "gsap"
-import { Link } from "react-router-dom"
+import React, { Component } from "react";
+import { TimelineMax, Power4 } from "gsap";
+import { Link } from "react-router-dom";
 
-import style from "./style.scss"
+import Button from "@simple/Button";
+import nav from "@/data/nav";
+
+import style from "./style.scss";
+
 
 export default class Header extends Component {
 	state = {
@@ -87,26 +91,23 @@ export default class Header extends Component {
 							ref={(el) => (this.menu = el)}
 							className={`${style.menu} ${openMenu ? style.active : ""}`}
 						>
-							<li>
-								<Link className={"stopCursor"} to="/works">
-									Works
-                </Link>
-							</li>
-							<li>
-								<Link className={"stopCursor"} to="/services">
-									Services
-                </Link>
-							</li>
-							<li>
-								<Link className={"stopCursor"} to="/blog">
-									Blog
-                </Link>
-							</li>
-							<li className={style.contactBtn}>
-								<Link className={"stopCursor"} to="/contact">
-									Contact
-                </Link>
-							</li>
+							{
+								nav.map(link => (
+									<li key={link.id}>
+										{link.button ? (
+												<Button href={link.href}> {link.name} </Button>
+											) : (
+												<Link 
+													className={"stopCursor"}
+													to={link.href}
+												>
+													{ link.name}
+												</Link>
+											) 
+										}
+									</li>
+								))
+							}
 						</ul>
 					</nav>
 				</div>

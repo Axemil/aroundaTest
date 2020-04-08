@@ -18,7 +18,6 @@ module.exports = {
 		publicPath: "/"
 	},
 	optimization: {
-		minimize: !isDev,
 		minimizer: [
 			new OptimizeCssAssetsPlugin({
 				cssProcessorOptions: {
@@ -34,6 +33,7 @@ module.exports = {
 			"@": path.join(__dirname, "src/"),
 			"@sections": path.join(__dirname, "src/components/sections"),
 			"@assets": path.join(__dirname, "src/assets/"),
+			"@svg": path.join(__dirname, "src/assets/svg/"),
 			"@simple": path.join(__dirname, "src/components/simple"),
 			"@pages": path.join(__dirname, "src/components/pages"),
 			"@landing": path.join(__dirname, "src/components/landing"),
@@ -44,7 +44,7 @@ module.exports = {
 	watch: isDev,
 	devtool: isDev && "source-map",
 	devServer: {
-		port: 8080,
+		port: 9090,
 		historyApiFallback: true,
 		open: true,
 		hot: true,
@@ -73,17 +73,12 @@ module.exports = {
 				// Match woff2 in addition to patterns like .woff?v=1.1.1.
 				test: /\.(woff|woff2|otf|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
 				use: {
-					loader: "url-loader",
+					loader: "file-loader",
 					options: {
-						// Limit at 50k. Above that it emits separate files
+						name: "./fonts/[name].[ext]",
+						outputPath: "./fonts",
 						limit: 50000,
-
-						// url-loader sets mimetype if it's passed.
-						// Without this it derives it from the file extension
-						mimetype: "application/font-woff",
-
-						// Output below fonts directory
-						name: "./fonts/[name].[ext]"
+						context: path.resolve(__dirname, "src"),
 					}
 				}
 			},
@@ -102,10 +97,10 @@ module.exports = {
 					{
 						loader: "css-loader",
 						options: {
-							sourceMap: true,
+							sourceMap: isDev,
 							modules: {
 								localIdentName: isDev
-									? "[path][name]__[local]__[hash:base64:5]"
+									? "[name]__[local]__[hash:base64:5]"
 									: "[hash:base64:12]",
 						
 							},

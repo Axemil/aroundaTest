@@ -1,0 +1,34 @@
+.button{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: inherit;
+	font-weight: 500;
+	line-height: 1;
+	position: relative;
+	font-size: 18px;
+}
+.button .icon{
+	margin-left: 8px;
+}
+.button span{
+	z-index: 1;
+	position: relative;
+	margin-left: 32px;
+	margin-right: 23px;
+	white-space: nowrap;
+	display: flex;
+	align-items: center;
+	pointer-events: none;
+}
+.button:before{
+	content: "";
+	position: absolute;
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	background-color: var(--lightBlue);
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}

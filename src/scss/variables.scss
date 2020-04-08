@@ -5,11 +5,26 @@
 	--spacing: calc(var(--cellSize) * 8);
 	--desktopWidth: 8 / -8;
 	--tabletWidth: 4 / -4;
-	--newWidth: 6 / -6;
+	--mainWidth: 6 / -6;
+	--fsL: 22px;
+	--fsM: 18px;
+	--fsS: 16px;
 }
 
 :root{
 	--black: #141515;
+	--white: #ffffff;
+	--primary: #60FED9;
+	--secondary: #950DF6;
+	--lightBlue: #5FD4EE;
+	--gray800: #4E5055;
+	--gray700: #7F838D;
+	--gray600: #A4A9B6;
+	--gray500: rgba(164, 169, 182, 0.63);
+	--gray400: rgba(164, 169, 182, 0.4);
+	--gray300: #F6F6F8;
+	--error: #F45D5D;
+	--success: #35D2AD;
 }
 
 

@@ -1,0 +1,19 @@
+.button{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid currentColor;
+	color: inherit;
+	font-weight: 500;
+	line-height: 1;
+}
+.sm{
+	width: 153px;
+	height: 48px;
+	border-radius: 48px;
+}
+.md{
+	width: 209px;
+	height: 64px;
+	border-radius: 64px;
+}
