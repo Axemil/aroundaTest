@@ -8,10 +8,10 @@
 	width: 100%;
 	grid-column: var(--mainWidth);
 	max-width: 910px;
-	margin: auto;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	margin-left: calc(var(--cellSize) * 4);
 }
 .contentWrapper{
 	max-width: 490px;
@@ -21,7 +21,7 @@
 	margin: 0 0 30px;
 }
 .contentDesc{
-	margin: 0 0 72px;
+	margin: 0 0 50px;
 	font-size: var(--fsL);
 }
 .listTitle{

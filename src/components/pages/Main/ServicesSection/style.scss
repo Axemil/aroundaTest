@@ -1,0 +1,45 @@
+.servicesSection{
+	display: inherit;
+	grid-template-columns: inherit;
+	grid-column: 1 / -1;
+	padding: 156px 0;
+	background-color: var(--gray300);
+}
+.container{
+	width: 100%;
+	grid-column: var(--mainWidth);
+}
+.titleWrapper{
+	text-align: center;
+	margin: 0 auto 80px;
+	max-width: 910px;
+}
+.titleWrapper:before{
+	content: "SERVICES";
+	display: block;
+	margin: 0 auto 20px;
+	font-weight: 500;
+	font-size: var(--fsM);
+}
+.titleWrapper p{
+	margin: 20px auto 0;
+	text-align: center;
+	font-size: var(--fsL);
+	max-width: 740px;
+} 
+.servicesWrapper{
+	max-width: 1048px;
+	margin: 0 auto 100px;
+	display: flex;
+	justify-content: space-between;
+}
+.item{
+	max-width: 140px;
+}
+.itemIcon{
+	margin: 0 0 25px;
+}
+.btnWrapper{
+	display: flex;
+	justify-content: flex-end;
+}

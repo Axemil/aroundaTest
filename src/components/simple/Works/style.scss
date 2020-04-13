@@ -56,6 +56,10 @@
 	color: var(--white);
 }
 
+.item:nth-child(4) img{
+	object-position: left top;
+}
+
 .item .desc {
 	font-size: 18px;
 

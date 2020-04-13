@@ -12,7 +12,7 @@ body {
 	font-size: 16px;
 	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
-	line-height: 1.4;
+	line-height: 1.8;
 	overflow-x: hidden;
 }
 
@@ -27,6 +27,7 @@ button {
 img,
 video {
 	max-width: 100%;
+	display: block;
 }
 
 button, a, input {
@@ -431,6 +432,7 @@ button, a, input {
 			opacity: 0.75;
 			color: black;
 		}
+		
 
 		.lazy-load-image-background.blur {
 			filter: blur(15px);

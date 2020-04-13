@@ -1,21 +1,31 @@
 import React from 'react';
 import { TimelineLite } from 'gsap';
 
-import Hero from "./Hero";
-import WorkSection from '@sections/WorkSection';
-import OurExpertise from "./OurExpertise";
-import HowSection from '@sections/HowSection';
-import BlogSection from '@sections/BlogSection';
-import StartSection from '@sections/StartSection';
-import BackgroundAnimate from '@simple/BackgroundAnimate';
-import data from '@/data/Works';
-import Footer from '@sections/Footer';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import MetaTags from 'react-meta-tags';
 
+import Hero from "./Hero";
+import WorksSection from './WorksSection';
+import OurExpertise from "./OurExpertise";
+import ServicesSection from './ServicesSection';
+import SliderSection from './SliderSection';
+import AboutUsSection from './AboutUsSection';
+import BlogSection from './BlogSection';
+import BackgroundAnimate from '@simple/BackgroundAnimate';
+import LetsTalk from '@sections/LetsTalk';
+import Footer from '@sections/Footer';
 
 
 
-import style from './style.scss';
+import data from '@/data/Works'
+
+
+
+
+import s from './style.scss';
+
+
+
 
 
 
@@ -35,15 +45,20 @@ class Main extends React.Component {
 			<>
 				<Hero />
 				<BackgroundAnimate ref={el => (this.bg = el)} />
-				<section className={style.wrapWorkSection}>
-					<WorkSection worksData={data} title={"Recent work"} />
-				</section>
+				<WorksSection worksData={data} />
 				<OurExpertise />
-				<HowSection />
+				<ServicesSection />
+				<SliderSection />
+				<AboutUsSection />
 				<BlogSection />
-				<section className={style.wrapStartSection}>
-					<StartSection />
+				<section className={s.backgroundSection}>
+					<LazyLoadImage 
+						alt="our team"
+						src="/assets/images/bg.jpg"
+						effect="blur"
+					/>
 				</section>
+				<LetsTalk />
 				<Footer />
 				<MetaTags>
 					<title>Arounda. Digital Product Agency</title>

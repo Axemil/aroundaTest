@@ -7,6 +7,7 @@
 	line-height: 1;
 	position: relative;
 	font-size: 18px;
+	height: 64px;
 }
 .button .icon{
 	margin-left: 8px;
@@ -27,7 +28,7 @@
 	width: 64px;
 	height: 64px;
 	border-radius: 50%;
-	background-color: var(--lightBlue);
+	background-color: var(--primary);
 	left: 0;
 	top: 50%;
 	transform: translateY(-50%);

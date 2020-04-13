@@ -1,0 +1,51 @@
+.aboutUsSection{
+	display: inherit;
+	grid-template-columns: inherit;
+	grid-column: 1 / -1;
+	padding: 180px 0;
+	background-color: var(--gray300);
+}
+.container{
+	grid-column: var(--mainWidth);
+	margin-left: calc(var(--cellSize) * 4);
+	max-width: 964px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.contentWrapper{
+	width: 100%;
+	max-width: 490px;
+	margin-right: 20px;
+}
+.topRated{
+	display: flex;
+	align-items: center;
+	margin: 0 0 20px;
+}
+.topRated span{
+	margin-left: 10px;
+	font-size: var(--fsM);
+	font-weight: 500;
+}
+.titleWrapper{
+	margin: 0 0 20px;
+}
+.descWrapper{
+	font-size: var(--fsM);
+	margin: 0 0 62px;
+}
+.statistics{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.item{
+	white-space: nowrap;
+	font-size: var(--fsM);
+}
+.item .number{
+	font-size: 36px;
+	font-weight: bold;
+	line-height: 1.4;
+}

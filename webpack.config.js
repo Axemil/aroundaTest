@@ -4,7 +4,6 @@ const CopyWebpackPlugin = require("copy-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const PrerenderSPAPlugin = require("prerender-spa-plugin")
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
 const TerserPlugin = require("terser-webpack-plugin")
 
 const NODE_ENV = process.env.NODE_ENV || "development"
@@ -130,9 +129,6 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new HtmlWebpackPlugin({
-			template: "./src/static/index.html"
-		}),
 		new webpack.DefinePlugin({
 			__DEV__: JSON.stringify(isDev)
 		}),
@@ -145,9 +141,9 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: "bundle.css"
 		}),
-		new PrerenderSPAPlugin({
-			staticDir: path.join(__dirname, "dist"),
-			routes: ["/"]
-		})
+		// new PrerenderSPAPlugin({
+		// 	staticDir: path.join(__dirname, "dist"),
+		// 	routes: ["/"]
+		// })
 	]
 }

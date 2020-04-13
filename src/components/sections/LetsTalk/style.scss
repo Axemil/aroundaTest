@@ -1,0 +1,21 @@
+.letsTalk{
+	display: inherit;
+	grid-column: var(--mainWidth);
+	text-align: center;
+	justify-items: center;
+	padding: 180px 0 80px;
+}
+.gotProject{
+	font-size: var(--fsL);
+	text-align: center;
+	margin: 0 0 20px;
+}
+.email{
+	font-size: 70px;
+	font-weight: 500;
+	margin: 0 0 40px;
+}
+.btnWrapper{
+	display: flex;
+	justify-content: center;
+}
