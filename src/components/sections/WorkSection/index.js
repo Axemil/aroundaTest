@@ -7,7 +7,7 @@ import s from './style.scss';
 
 
 
-const WorkSection = ({worksData, title}) => {    
+const WorkSection = ({worksData}) => {    
     return (
         <div className={s.workSection}>
             <Works worksData={worksData}/>

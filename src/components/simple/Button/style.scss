@@ -2,20 +2,29 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border: 2px solid currentColor;
+	border: 2px solid var(--black);
 	color: inherit;
 	font-weight: 500;
 	line-height: 1;
+	transition: all .3s ease-in-out
 }
 .sm{
 	width: 153px;
 	height: 48px;
 	border-radius: 48px;
 }
+.sm:hover{
+	background-color: var(--black);
+	color: var(--white);
+}
 .md{
 	width: 209px;
 	height: 64px;
 	border-radius: 64px;
+}
+.md:hover{
+	background-color: var(--primary);
+	border-color: var(--primary);
 }
 .button span{
 	pointer-events: none;

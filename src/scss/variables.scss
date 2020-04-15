@@ -27,7 +27,6 @@
 	--success: #35D2AD;
 }
 
-
 //color
 $black: #111212;
 $gray: #9FA4A6;
@@ -43,7 +42,23 @@ $cubic: ease-in-out;
 $maxDesktop: 1680px;
 $minDesktop: 1440px;
 $maxLaptop: 1296px;
-$maxTablet: 1080px;
-$minTablet: 768px;
+$maxTablet: 1180px;
+$minTablet: 900px;
 $maxMobile: 767px;
 $minMobile: 384px;
+
+
+@media (max-width: $maxTablet){
+	:root{
+		--mainWidth: 4 / -4;
+		--fsL: 18px;
+		--fsM: 16px;
+	}
+	
+}
+@media (max-width: $maxMobile){
+	:root{
+		--mainWidth: 3 / -3;
+	}
+	
+}

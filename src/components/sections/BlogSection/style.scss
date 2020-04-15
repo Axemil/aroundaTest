@@ -7,14 +7,8 @@
 	display: inherit;
 	grid-auto-rows: min-content;
 	grid-template-columns: inherit;
-
-	@media (max-width: $maxLaptop) {
-		padding: 167px 0 168px;
-		min-height: auto;
-	}
-
 	@media (max-width: $maxTablet) {
-		padding: 128px 0 120px;
+		padding: 140px 0 140px;
 	}
 
 	@media (max-width: $maxMobile) {
@@ -24,11 +18,17 @@
 
 .container{
 	grid-column: var(--mainWidth);
-	padding-left: calc(var(--cellSize) * 4);
+	margin-left: calc(var(--cellSize) * 4);
+	@media (max-width: $maxTablet){
+		margin-left: 0;
+	}
 }
 
 .titleWrapper {
 	margin: 0 0 100px;
+	@media (max-width: $maxTablet){
+		margin: 0 0 60px;
+	}
 }
 
 .posts {
@@ -36,38 +36,16 @@
 	.post {
 		display: grid;
 		grid-template-columns: minmax(220px, 315px) 1fr;
-		min-height: 80px;
 		position: relative;
-
-		&:first-child {
+		&:not(:last-child) {
 			margin: 0 0 80px;
-
-			@media (max-width: $maxLaptop) {
-				margin-top: 90px;
-			}
-
 			@media (max-width: $maxTablet) {
-				margin-top: 40px;
+				margin: 0 0 60px;
 			}
-		}
 
-		&:last-of-type {
-			@media (max-width: $maxMobile) {
-				margin: 25px 0 0;
-			}
-		}
-
-		@media (max-width: $maxLaptop) {
-			grid-template-columns: 216px 1fr;
-		}
-
-		@media (max-width: $maxTablet) {
-			grid-template-columns: 0.5fr 1fr;
-			margin: 50px 0 0;
 		}
 
 		@media (max-width: $maxMobile) {
-			margin: 30px 0 0;
 			grid-template-columns: 125px 1fr;
 		}
 
@@ -100,10 +78,6 @@
 
 	.dash {
 		padding: 0 12px;
-
-		@media (max-width: $maxTablet) {
-			padding: 0 13px;
-		}
 
 		@media (max-width: $maxMobile) {
 			padding: 0 3px;
@@ -149,28 +123,7 @@
 		height: 100%;
 	}
 
-	@media (max-width: $maxLaptop) {
-		right: calc(var(--cellSize) * (-10) - -3px);
-		width: calc(var(--cellSize) * 8 - -3px);
-		padding-top: 18%;
-	}
-
 	@media (max-width: $maxTablet) {
 		display: none;
-	}
-}
-
-.listForMobile {
-	display: none;
-
-	@media (max-width: 568px) {
-		// max-width: 568px
-		display: block;
-	}
-
-	@media (max-width: 380px) {
-		.title {
-			@include font(19px, 14px, $minMobile, 320px);
-		}
 	}
 }

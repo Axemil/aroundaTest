@@ -3,16 +3,16 @@ import style from "./style.scss"
 import { Link } from "react-router-dom"
 
 const StartSection = (props) => {
-  return (
-    <Fragment>
-      <div className={style.title}>
-        Got a project?
+	return (
+		<Fragment>
+			<div className={style.title}>
+				Got a project?
         <br />
-        <Link to={"/contact"} className="stopCursor">
-          Let's start.
+				<Link to={"/contact"} className="stopCursor">
+					Let's start.
         </Link>
-      </div>
-    </Fragment>
-  )
+			</div>
+		</Fragment>
+	)
 }
 export default StartSection

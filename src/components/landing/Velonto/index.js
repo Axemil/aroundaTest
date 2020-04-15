@@ -500,7 +500,7 @@ export default class Velonto extends Component {
                             </div>
                             <div className={s.item}>
                                     <div className={s.title}>Developed a complex logistics system </div>
-                                    <div className={s.desc}>Thus we optimized costs and expedited delivery by x%</div>
+                                    <div className={s.desc}>Thus we optimized costs and expedited delivery by 25%</div>
                                     <div className={s.number}>02</div>
                             </div>
                             <div className={s.item}>
@@ -567,7 +567,7 @@ export default class Velonto extends Component {
                             </li>
                             <li>
                                 <div className={s.number}><span>03</span></div>
-                                <p>Conversion <b>increasing on x%</b> in user</p>
+                                <p>Conversion <b>increasing on 20%</b> in user</p>
                             </li>
                         </ul>
                     </div>

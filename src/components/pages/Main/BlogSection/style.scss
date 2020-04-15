@@ -8,27 +8,21 @@
 	grid-auto-rows: min-content;
 	grid-template-columns: inherit;
 
-	@media (max-width: $maxLaptop) {
-		padding: 167px 0 168px;
-		min-height: auto;
-	}
-
 	@media (max-width: $maxTablet) {
-		padding: 128px 0 120px;
-	}
-
-	@media (max-width: $maxMobile) {
-		padding: 84px 0 84px;
+		padding: 140px 0;
 	}
 }
 
 .container{
 	grid-column: var(--mainWidth);
-	padding-left: calc(var(--cellSize) * 4);
+	margin-left: calc(var(--cellSize) * 4);
 }
 
 .titleWrapper {
 	margin: 0 0 100px;
+	@media (max-width: $minTablet) {
+		margin: 0 0 60px;
+	}
 }
 
 .posts {
@@ -42,33 +36,10 @@
 		&:first-child {
 			margin: 0 0 80px;
 
-			@media (max-width: $maxLaptop) {
-				margin-top: 90px;
+			@media (max-width: $minTablet) {
+				margin: 0 0 60px;
 			}
 
-			@media (max-width: $maxTablet) {
-				margin-top: 40px;
-			}
-		}
-
-		&:last-of-type {
-			@media (max-width: $maxMobile) {
-				margin: 25px 0 0;
-			}
-		}
-
-		@media (max-width: $maxLaptop) {
-			grid-template-columns: 216px 1fr;
-		}
-
-		@media (max-width: $maxTablet) {
-			grid-template-columns: 0.5fr 1fr;
-			margin: 50px 0 0;
-		}
-
-		@media (max-width: $maxMobile) {
-			margin: 30px 0 0;
-			grid-template-columns: 125px 1fr;
 		}
 
 		&:hover {
@@ -117,6 +88,9 @@
 		cursor: pointer;
 		line-height: 1.5;
 		transition: all 0.3s $cubic;
+		@media (max-width: $minTablet) {
+			font-size: 24px;
+		}
 
 		span {
 			z-index: 2;
@@ -172,5 +146,12 @@
 		.title {
 			@include font(19px, 14px, $minMobile, 320px);
 		}
+	}
+}
+
+
+@media (max-width: $maxLaptop){
+	.container{
+		margin-left: 0;
 	}
 }

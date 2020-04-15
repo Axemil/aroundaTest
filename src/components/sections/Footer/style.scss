@@ -4,14 +4,14 @@
 	display: inherit;
 	grid-template-columns: inherit;
 	grid-column: 1 / -1;
-	margin-top: 150px;
+	padding-top: 100px;
 }
 
 .footerTop {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	margin: 0 0 100px;
+	margin: 0 0 80px;
 }
 
 .row {
@@ -62,14 +62,12 @@
 	fill: var(--black);
 }
 
-
-
 .footerBottom {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	border-top: 1px solid rgba(151, 151, 151, 0.1);
-	padding: 28px 0 44px;
+	padding: 18px 0;
 
 	@media (max-width: $maxTablet) {
 		padding: 8px 0;

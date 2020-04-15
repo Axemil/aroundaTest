@@ -10,7 +10,7 @@ const BlogSection = props => {
 	const postsDesktop = [
 		{
 			id: 0,
-			date: 'July 1',
+			date: 'July 1 , 2020',
 			category: 'UI Design',
 			title: '7 free icon sets you can get on Dribbble',
 			link: 'https://dribbble.com/stories/2019/07/01/7-free-icon-sets-to-download-on-dribbble',
@@ -18,7 +18,7 @@ const BlogSection = props => {
 		},
 		{
 			id: 1,
-			date: 'Feb 15',
+			date: 'Feb 15 , 2020',
 			category: 'UI Design',
 			title: 'What defines good UI Design?',
 			link: 'https://dribbble.com/stories/2019/02/15/what-defines-good-ui-design',

@@ -1,9 +1,14 @@
+@import "../../../scss/variables.scss";
+
 .letsTalk{
 	display: inherit;
 	grid-column: var(--mainWidth);
 	text-align: center;
 	justify-items: center;
-	padding: 180px 0 80px;
+	padding: 160px 0;
+	@media (max-width: $maxTablet){
+		padding: 140px 0;
+	}
 }
 .gotProject{
 	font-size: var(--fsL);
@@ -14,6 +19,9 @@
 	font-size: 70px;
 	font-weight: 500;
 	margin: 0 0 40px;
+	@media (max-width: $maxTablet){
+		font-size: 56px;
+	}
 }
 .btnWrapper{
 	display: flex;

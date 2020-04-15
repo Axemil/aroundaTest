@@ -1,10 +1,23 @@
+@import "../../../scss/variables.scss";
+
 .partners{
 	margin: 100px 0 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	@media (max-width: $minTablet){
+		margin: 60px 0 0;
+		overflow-x: auto;
+		justify-content: flex-start;
+	}
 }
-
+.partners li{
+	height: 48px;
+	@media (max-width: $minTablet){
+		margin: 0 70px 0 0;
+		flex-shrink: 0;
+	}
+}
 .partners img{
 	height: 48px;
 }

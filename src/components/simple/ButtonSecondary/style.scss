@@ -8,6 +8,8 @@
 	position: relative;
 	font-size: 18px;
 	height: 64px;
+	overflow: hidden;
+	border-radius: 64px;
 }
 .button .icon{
 	margin-left: 8px;
@@ -27,9 +29,14 @@
 	position: absolute;
 	width: 64px;
 	height: 64px;
-	border-radius: 50%;
+	border-radius: 64px;
 	background-color: var(--primary);
 	left: 0;
 	top: 50%;
 	transform: translateY(-50%);
+	will-change: width;
+	transition: all .3s ease-in-out;
+}
+.button:hover:before{
+	width: 100%;
 }

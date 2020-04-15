@@ -15,7 +15,7 @@ const LetsTalk = () => (
 				<a href="mailto:info@arounda.agency" className="stopCursor">info@arounda.agency</a>		
 			</div>
 			<div className={s.btnWrapper}>
-				<Button>Contact us</Button>
+				<Button size="md">Contact us</Button>
 			</div>
 		</div>
 	</section>
