@@ -1,18 +1,20 @@
 import React, {Fragment} from 'react';
-import style from './style.scss';
-import Title from '@simple/Title';
+
 import Works from '@simple/Works';
+import ButtonSecondary from "@simple/ButtonSecondary";
+
+import s from './style.scss';
 
 
 
-const WorkSection = ({worksData, title}) => {    
+const WorkSection = ({worksData}) => {    
     return (
-        <Fragment>
-                <div className={style.titleWrapper}>
-                    <Title text={title}/>
-                </div>
+        <div className={s.workSection}>
             <Works worksData={worksData}/>
-        </Fragment>
+			<div className={s.buttonWrapper}>
+				<ButtonSecondary icon="plus">More works</ButtonSecondary>
+			</div>
+        </div>
     )
 };
 export default WorkSection;

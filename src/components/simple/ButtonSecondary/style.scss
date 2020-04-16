@@ -1,0 +1,42 @@
+.button{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: inherit;
+	font-weight: 500;
+	line-height: 1;
+	position: relative;
+	font-size: 18px;
+	height: 64px;
+	overflow: hidden;
+	border-radius: 64px;
+}
+.button .icon{
+	margin-left: 8px;
+}
+.button span{
+	z-index: 1;
+	position: relative;
+	margin-left: 32px;
+	margin-right: 23px;
+	white-space: nowrap;
+	display: flex;
+	align-items: center;
+	pointer-events: none;
+}
+.button:before{
+	content: "";
+	position: absolute;
+	width: 64px;
+	height: 64px;
+	border-radius: 64px;
+	background-color: var(--primary);
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	will-change: width;
+	transition: all .3s ease-in-out;
+}
+.button:hover:before{
+	width: 100%;
+}

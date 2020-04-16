@@ -1,64 +1,70 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import { TimelineLite } from 'gsap';
-import style from './style.scss';
-import WorkSection from '@sections/WorkSection';
-import HeadingSection from '@sections/HeadingSection';
-import WhoSection from '@sections/WhoSection';
-import WhySection from '@sections/WhySection';
-import WhatSection from '@sections/WhatSection';
-import HowSection from '@sections/HowSection';
-import BlogSection from '@sections/BlogSection';
-import StartSection from '@sections/StartSection';
-import PartnerSection from '@sections/PartnerSection';
-import VideoSection from '@sections/VideoSection';
-import BackgroundAnimate from '@simple/BackgroundAnimate';
-import data from '@/data/Works';
-import Footer from '@sections/Footer';
+
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import MetaTags from 'react-meta-tags';
 
-import utmcookie from "@/functions/utmcookie"
+import Hero from "./Hero";
+import WorksSection from './WorksSection';
+import OurExpertise from "./OurExpertise";
+import ServicesSection from './ServicesSection';
+import SliderSection from './SliderSection';
+import AboutUsSection from './AboutUsSection';
+import BlogSection from './BlogSection';
+import BackgroundAnimate from '@simple/BackgroundAnimate';
+import LetsTalk from '@sections/LetsTalk';
+import Footer from '@sections/Footer';
 
 
 
-class Main extends Component {
+import data from '@/data/Works'
+
+
+
+
+import s from './style.scss';
+
+
+
+
+
+
+class Main extends React.Component {
 	get tl() {
 		const tl = new TimelineLite();
-		const headingTl = new TimelineLite();
 		const bgTl = new TimelineLite();
-		const videoTl = new TimelineLite();
 
-		headingTl.add(this.heading.tl);
 		bgTl.add(this.bg.tween);
-		videoTl.add(this.video.tl)
 
-		tl.add(bgTl, 'start').add(headingTl, '-=.8').add(videoTl, '-=3');
+		tl.add(bgTl, 'start');
 
 		return tl;
 	}
 	render() {
 		return (
-			<Fragment>
-				<HeadingSection ref={el => (this.heading = el)} />
+			<>
+				<Hero />
 				<BackgroundAnimate ref={el => (this.bg = el)} />
-				<VideoSection ref={el => this.video = el} />
-				<PartnerSection />
-				<section className={style.wrapWorkSection}>
-					<WorkSection worksData={data} title={"Recent work"} />
-				</section>
-				<WhoSection />
-				<WhySection />
-				<WhatSection />
-				<HowSection />
+				<WorksSection worksData={data} />
+				<OurExpertise />
+				<ServicesSection />
+				<SliderSection />
+				<AboutUsSection />
 				<BlogSection />
-				<section className={style.wrapStartSection}>
-					<StartSection />
+				<section className={s.backgroundSection}>
+					<LazyLoadImage 
+						alt="our team"
+						src="/assets/images/bg.jpg"
+						effect="blur"
+					/>
 				</section>
+				<LetsTalk />
 				<Footer />
 				<MetaTags>
 					<title>Arounda. Digital Product Agency</title>
 					<meta name="description" content="Arounda is a Digital Product Agency that create and evolve innovative, mobile and web apps, marketing websites and brand identities for startups and enterprises through strategy, UX/UI design, development & branding." />
 				</MetaTags>
-			</Fragment>
+			</>
 		);
 	}
 }

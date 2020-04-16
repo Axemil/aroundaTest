@@ -1,3 +1,32 @@
+
+:root {
+	--cells: 48;
+	--cellSize: calc(100vw / var(--cells));
+	--spacing: calc(var(--cellSize) * 8);
+	--desktopWidth: 8 / -8;
+	--tabletWidth: 4 / -4;
+	--mainWidth: 6 / -6;
+	--fsL: 22px;
+	--fsM: 18px;
+	--fsS: 16px;
+}
+
+:root{
+	--black: #141515;
+	--white: #ffffff;
+	--primary: #60FED9;
+	--secondary: #950DF6;
+	--lightBlue: #5FD4EE;
+	--gray800: #4E5055;
+	--gray700: #7F838D;
+	--gray600: #A4A9B6;
+	--gray500: rgba(164, 169, 182, 0.63);
+	--gray400: rgba(164, 169, 182, 0.4);
+	--gray300: #F6F6F8;
+	--error: #F45D5D;
+	--success: #35D2AD;
+}
+
 //color
 $black: #111212;
 $gray: #9FA4A6;
@@ -13,7 +42,22 @@ $cubic: ease-in-out;
 $maxDesktop: 1680px;
 $minDesktop: 1440px;
 $maxLaptop: 1296px;
-$maxTablet: 1080px;
-$minTablet: 768px;
+$maxTablet: 1180px;
+$minTablet: 900px;
 $maxMobile: 767px;
 $minMobile: 384px;
+
+
+@media (max-width: $maxTablet){
+	:root{
+		--mainWidth: 4 / -4;
+		--fsL: 18px;
+		--fsM: 16px;
+	}
+}
+@media (max-width: $maxMobile){
+	:root{
+		--mainWidth: 3 / -3;
+	}
+	
+}

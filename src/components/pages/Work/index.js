@@ -13,110 +13,110 @@ import MetaTags from 'react-meta-tags';
 
 
 export default class Work extends Component {
-  state = {
-    sortList: [
-      {
-        id: 1,
-        value: 'industry'
-      },
-      {
-        id: 2,
-        value: 'project type'
-      },
-    ],
-    selectedItem: 'project type',
-    showDropdown: false,
-    categories: {
-      'project type': ['All projects', 'Platforms', 'Corporate websites', 'Web applications', 'Mobile applications', 'Landing pages', 'Brand identity'],
-      'industry': ['Food delivery', 'Fintech', 'Health', 'SaaS']
-    },
-    selectedCategory: null,
-    worksData: [],
-  }
+	state = {
+		sortList: [
+			{
+				id: 1,
+				value: 'industry'
+			},
+			{
+				id: 2,
+				value: 'project type'
+			},
+		],
+		selectedItem: 'project type',
+		showDropdown: false,
+		categories: {
+			'project type': ['All projects', 'Platforms', 'Corporate websites', 'Web applications', 'Mobile applications', 'Landing pages', 'Brand identity'],
+			'industry': ['Food delivery', 'Fintech', 'Health', 'SaaS']
+		},
+		selectedCategory: null,
+		worksData: [],
+	}
 
-  componentDidMount() {
-    this.setState({
-      worksData: [...data]
-    })
-  }
+	componentDidMount() {
+		this.setState({
+			worksData: [...data]
+		})
+	}
 
-  handleFind = (id) => {
+	handleFind = (id) => {
 
-    const { showDropdown } = this.state;
+		const { showDropdown } = this.state;
 
-    const answer = this.state.sortList.find(item => item.id === id);
+		const answer = this.state.sortList.find(item => item.id === id);
 
-    this.setState({
-      selectedItem: answer.value,
-      showDropdown: !showDropdown,
-      worksData: [...data]
-    })
-  }
+		this.setState({
+			selectedItem: answer.value,
+			showDropdown: !showDropdown,
+			worksData: [...data]
+		})
+	}
 
-  handlerToggle = () => {
+	handlerToggle = () => {
 
-    const { showDropdown } = this.state;
+		const { showDropdown } = this.state;
 
-    this.setState({
-      showDropdown: !showDropdown
-    })
-  }
+		this.setState({
+			showDropdown: !showDropdown
+		})
+	}
 
-  handleSelectCategory = (e) => {
-    const {worksData, selectedCategory} = this.state;
-    const value = e.target.value.toLowerCase();
+	handleSelectCategory = (e) => {
+		const { worksData, selectedCategory } = this.state;
+		const value = e.target.value.toLowerCase();
 
-    if (value === 'all projects'){
-      this.setState({
-        worksData: [...data]
-      })
-    }else{
-      const filteredData = data.reduce((prev, el) => {
-        if(el.type.includes(value)){
-          prev.push(el)
-        }
-        return prev
-      }, []);
-  
-  
-      this.setState({
-        worksData: [...filteredData]
-      })
-    }
-  }
+		if (value === 'all projects') {
+			this.setState({
+				worksData: [...data]
+			})
+		} else {
+			const filteredData = data.reduce((prev, el) => {
+				if (el.type.includes(value)) {
+					prev.push(el)
+				}
+				return prev
+			}, []);
 
-  render() {
-    const {sortList, selectedItem, showDropdown, categories, selectedCategory,worksData} = this.state;
-    return (
-      <Fragment>
-        <SortSection 
-          sortList={sortList}
-          selectedItem={selectedItem}
-          showDropdown={showDropdown}
-          categories={categories}
-          selectedCategory={selectedCategory}
-          categoryContent={categoryContent}
-          handleFind={this.handleFind}
-          handlerToggle={this.handlerToggle}
-          handleSelectCategory={this.handleSelectCategory}
-          handleFilter={this.handleFilter}
-        />
-        <section className={style.wrapWorkSection}>
-          <WorkSection worksData={worksData} title={"Recent work"}/>
-        </section>
-        <section className={style.wrapInnovationSection}>
-          <InnovationSection btn='' />
-        </section>
-        <SliderSection />
-        <section className={style.wrapStartSection}>
-          <StartSection />
-        </section>
-        <Footer/>
-        <MetaTags>
-            <title>Works. Latest cases from Arounda</title>
-            <meta name="description" content="Beautifull and clean Arounda works." />
-        </MetaTags>
-      </Fragment>
-    );
-  }
+
+			this.setState({
+				worksData: [...filteredData]
+			})
+		}
+	}
+
+	render() {
+		const { sortList, selectedItem, showDropdown, categories, selectedCategory, worksData } = this.state;
+		return (
+			<Fragment>
+				<SortSection
+					sortList={sortList}
+					selectedItem={selectedItem}
+					showDropdown={showDropdown}
+					categories={categories}
+					selectedCategory={selectedCategory}
+					categoryContent={categoryContent}
+					handleFind={this.handleFind}
+					handlerToggle={this.handlerToggle}
+					handleSelectCategory={this.handleSelectCategory}
+					handleFilter={this.handleFilter}
+				/>
+				<section className={style.wrapWorkSection}>
+					<WorkSection worksData={worksData} title={"Recent work"} />
+				</section>
+				<section className={style.wrapInnovationSection}>
+					<InnovationSection btn='' />
+				</section>
+				<SliderSection />
+				<section className={style.wrapStartSection}>
+					<StartSection />
+				</section>
+				<Footer />
+				<MetaTags>
+					<title>Works. Latest cases from Arounda</title>
+					<meta name="description" content="Beautifull and clean Arounda works." />
+				</MetaTags>
+			</Fragment>
+		);
+	}
 }

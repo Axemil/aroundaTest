@@ -18,7 +18,7 @@ import Work from "@pages/Work"
 import Services from "@pages/Services"
 import Contacts from "@pages/Contacts"
 import Aside from "@sections/Aside"
-import ScrollToTop from "@simple/ScrollToTop"
+import Layout from "@sections/Layout"
 import PageNotFound from "@pages/PageNotFound"
 import Velonto from "@landing/Velonto"
 import BoldCase from "@case/Bold"
@@ -49,8 +49,8 @@ class App extends Component {
 
 		utmcookie.writeReferrerOnce();
 
-		if(utmcookie.utmPresentInUrl()){
-		    utmcookie.writeUtmCookieFromParams();
+		if (utmcookie.utmPresentInUrl()) {
+			utmcookie.writeUtmCookieFromParams();
 		}
 	}
 	tl = () => {
@@ -92,46 +92,42 @@ class App extends Component {
 
 
 	render() {
-		const { openMenu, preloader, activeStyle, showContent } = this.state
+		const { openMenu, preloader } = this.state
 
 		return !this.state.mounted ? (
 			<h1>Loading...</h1>
 		) : (
 				<Router>
-					<ScrollToTop>
-						<div className="grid" onClick={this.handleClick}>
-							<MediaQuery minDeviceWidth={1081}>
-								{(matches) => {
-									return matches ? <Cursor /> : null
-								}}
-							</MediaQuery>
-							<Header
-								ref={(el) => {
-									this.header = el
-								}}
-								toggleMenu={this.toggleMenu}
-								openMenu={openMenu}
-								activeStyle={activeStyle}
+					<Layout>
+						<MediaQuery minDeviceWidth={1081}>
+							{(matches) => {
+								return matches ? <Cursor /> : null
+							}}
+						</MediaQuery>
+						<Header
+							ref={(el) => {
+								this.header = el
+							}}
+							toggleMenu={this.toggleMenu}
+							openMenu={openMenu}
+						/>
+						<Aside openMenu={openMenu} handleCloseMenu={this.handleCloseMenu} />
+						<Switch>
+							<Route
+								path="/"
+								exact
+								component={() => <Main ref={(el) => (this.main = el)} />}
 							/>
-							<Aside openMenu={openMenu} handleCloseMenu={this.handleCloseMenu} />
-							<Switch>
-								<Route
-									path="/"
-									exact
-									component={() => <Main ref={(el) => (this.main = el)} />}
-									showContent={showContent}
-								/>
-								<Route path="/works" exact component={Work} />
-								<Route path="/contact" exact component={Contacts} />
-								<Route path="/services" exact component={Services} />
-								<Route path="/expertise/food-delivery" exact component={Velonto} />
-								<Route path="/boldCase" exact component={BoldCase} />
-								<Route path="/blog/:id" exact component={BlogPostConnected} />
-								<Route path="/blog" exact component={Blog} />
-								<Route component={PageNotFound} />
-							</Switch>
-						</div>
-					</ScrollToTop>
+							<Route path="/works" exact component={Work} />
+							<Route path="/contact" exact component={Contacts} />
+							<Route path="/services" exact component={Services} />
+							<Route path="/expertise/food-delivery" exact component={Velonto} />
+							<Route path="/boldCase" exact component={BoldCase} />
+							<Route path="/blog/:id" exact component={BlogPostConnected} />
+							<Route path="/blog" exact component={Blog} />
+							<Route component={PageNotFound} />
+						</Switch>
+					</Layout>
 				</Router>
 			)
 	}

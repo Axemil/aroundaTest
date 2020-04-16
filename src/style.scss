@@ -1,94 +1,40 @@
 @import "./scss/reset.scss";
+@import "./scss/fonts.scss";
 @import "./scss/variables.scss";
 @import "./scss/mixins.scss";
 
-:root {
-	--cells: 48;
-	--cellSize: calc(100vw / var(--cells));
-	--spacing: calc(var(--cellSize) * 8);
-	--desktopWidth: 8 / -8;
-	--tabletWidth: 4 / -4;
-	--newWidth: 6 / -6;
-}
-
-@font-face {
-	font-family: "gorditabold";
-	src: url("assets/fonts/gorditabold-webfont.woff") format("woff");
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "gorditalight";
-	src: url("assets/fonts/gorditalight-webfont.woff") format("woff");
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "gorditamedium";
-	src: url("assets/fonts/gorditamedium-webfont.woff") format("woff");
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "gorditaregular";
-	src: url("assets/fonts/gorditaregular-webfont.woff") format("woff");
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "pt_sansbold";
-	src: url("assets/fonts/sansbold-webfont.woff") format("woff");
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "pt_sansregular";
-	src: url("assets/fonts/sansregular-webfont.woff") format("woff");
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-}
 
 body {
 	background-color: #fff;
-	color: #111212;
+	color: var(--black);
 	min-height: 100vh;
-	font-family: "gorditaregular", sans-serif;
+	font-family: "Gordita", sans-serif;
 	font-size: 16px;
+	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
-	line-height: 1.4;
+	line-height: 1.8;
 	overflow-x: hidden;
 }
 
+h1,h2,h3,h4,h5,h6{
+	margin: 0;
+}
+
 button {
-	outline: red;
 	cursor: pointer;
 }
 
 img,
 video {
 	max-width: 100%;
+	display: block;
 }
 
-* {
+button, a, input {
 	outline: none;
 }
 
 :global {
-	.section{
-		display: inherit;
-		grid-template-columns: inherit;
-	}
 	#app {
 		min-height: inherit;
 	}
@@ -110,13 +56,6 @@ video {
 		background: $lightGreen;
 		z-index: 500;
 		clip-path: polygon(0 21%, 100% 0, 100% 79%, 0% 100%);
-	}
-
-	.grid {
-		display: grid;
-		grid-template-columns: repeat(var(--cells), 1fr);
-		grid-auto-rows: auto;
-		position: relative;
 	}
 
 	.slick-slider {
@@ -486,6 +425,7 @@ video {
 			opacity: 0.75;
 			color: black;
 		}
+		
 
 		.lazy-load-image-background.blur {
 			filter: blur(15px);
