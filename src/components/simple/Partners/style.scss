@@ -9,6 +9,7 @@
 		margin: 60px 0 0;
 		overflow-x: auto;
 		justify-content: flex-start;
+		scroll-snap-type: x mandatory;
 	}
 }
 .partners li{
@@ -16,8 +17,16 @@
 	@media (max-width: $minTablet){
 		margin: 0 70px 0 0;
 		flex-shrink: 0;
+		scroll-snap-align: center;
+	}
+	@media (max-width: $maxMobile){
+		margin: 0 56px 0 0;
+		height: 34px;
 	}
 }
 .partners img{
 	height: 48px;
+	@media (max-width: $maxMobile){
+		height: 34px;
+	}
 }

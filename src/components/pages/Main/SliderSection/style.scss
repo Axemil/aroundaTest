@@ -9,6 +9,9 @@
 	@media (max-width: $maxTablet){
 		padding: 140px 0;
 	}
+	@media (max-width: $maxMobile){
+		padding: 110px 0;
+	}
 }
 .container{
 	grid-column: var(--mainWidth);

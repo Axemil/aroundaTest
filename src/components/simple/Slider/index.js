@@ -43,7 +43,6 @@ const SliderSection = () => {
 										effect="blur"
 										threshold={300}
 									/>
-									<span style={{ backgroundColor: "var(--gray300)", width: "100%", height: "100%" }}></span>
 								</div>
 								<div className={s.slideContent}>
 									<p className={s.reviews}>REVIEWS</p>

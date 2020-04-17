@@ -9,6 +9,9 @@
 	@media (max-width: $maxTablet){
 		padding: 140px 0;
 	}
+	@media (max-width: $maxMobile){
+		padding: 110px 0;
+	}
 }
 .container{
 	grid-column: var(--mainWidth);
@@ -74,6 +77,12 @@
 		max-width: 550px;
 		margin: 0 0 70px;
 	}
+	@media (max-width: $maxMobile){
+		margin: 0 0 60px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-row-gap: 40px;
+	}
 }
 .item{
 	white-space: nowrap;
@@ -91,6 +100,9 @@
 	}
 	@media (max-width: $minTablet){
 		font-size: 24px;
+	}
+	@media (max-width: $maxMobile){
+		font-size: 22px;
 	}
 }
 

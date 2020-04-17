@@ -14,9 +14,9 @@ const OurExpertise = () => (
 					<TitleH size="h1"> Our expertise for your product </TitleH>
 				</div>
 				<p className={s.contentDesc}>Working with dozens of digital products, we have got invaluable experience that helps our partners achieve quantifiable goals, save time and money.</p>
-				<div className={s.contentBtn}>
-					<ButtonSecondary> Our expertise </ButtonSecondary>
-				</div>
+			</div>
+			<div className={s.contentBtn}>
+				<ButtonSecondary> Our expertise </ButtonSecondary>
 			</div>
 			<div className={s.listWrapper}>
 				<div className={s.listTitle}>

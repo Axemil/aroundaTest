@@ -13,6 +13,9 @@
 	@media (max-width: $minTablet){
 		font-size: 44px;
 	}
+	@media (max-width: $maxMobile){
+		font-size: 30px;
+	}
 }
 .h1{
 	font-size: 50px;
@@ -22,11 +25,20 @@
 	@media (max-width: $minTablet){
 		font-size: 38px;
 	}
+	@media (max-width: $maxMobile){
+		font-size: 28px;
+	}
 }
 .h2{
 	font-size: 42px;
 	@media (max-width: $maxTablet){
 		font-size: 38px;
+	}
+	@media (max-width: $minTablet){
+		font-size: 36px;
+	}
+	@media (max-width: $maxMobile){
+		font-size: 28px;
 	}
 }
 .h3{
@@ -43,6 +55,9 @@
 }
 .h5{
 	font-size: 24px;
+	@media (max-width: $minTablet){
+		font-size: 20px;
+	}
 }
 .h6{
 	font-size: 20px;

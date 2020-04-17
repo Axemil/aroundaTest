@@ -50,6 +50,9 @@
 	@media (max-width: $minTablet) {
 		transform: translateY(-100px);
 	}
+	@media (max-width: $maxMobile) {
+		transform: translateY(0);
+	}
 }
 
 .item img {
@@ -76,10 +79,6 @@
 	@media (max-width: $minTablet){
 		font-size: 16px;
 	}
-
-	@media (max-width: $maxMobile) {
-		display: none;
-	}
 }
 
 .item .wrapper {
@@ -99,6 +98,9 @@
 
 .titleWrapper{
 	margin: 0 0 8px;
+	@media (max-width: $maxMobile){
+		margin: 0 0 6px;
+	}
 }
 
 .item .link {

@@ -11,6 +11,9 @@
 	@media (max-width: $maxTablet) {
 		padding: 140px 0;
 	}
+	@media (max-width: $maxMobile) {
+		padding: 110px 0;
+	}
 }
 
 .container{
@@ -23,6 +26,9 @@
 	@media (max-width: $minTablet) {
 		margin: 0 0 60px;
 	}
+	@media (max-width: $maxMobile) {
+		margin: 0 0 40px;
+	}
 }
 
 .posts {
@@ -30,14 +36,19 @@
 	.post {
 		display: grid;
 		grid-template-columns: minmax(220px, 315px) 1fr;
-		min-height: 80px;
 		position: relative;
+		@media (max-width: $maxMobile) {
+			grid-template-columns: 1fr;
+		}
 
 		&:first-child {
 			margin: 0 0 80px;
 
 			@media (max-width: $minTablet) {
 				margin: 0 0 60px;
+			}
+			@media (max-width: $maxMobile) {
+				margin: 0 0 40px;
 			}
 
 		}
@@ -61,11 +72,11 @@
 	.date {
 		color: var(--black);
 		font-size: 16px;
-		padding: 12px 0 0;
+		padding: 4px 0 0;
 
 		@media (max-width: $maxMobile) {
-			font-size: 11px;
-			padding: 7px 0 0;
+			padding: 0;
+			grid-row: 2 / 3;
 		}
 	}
 
@@ -88,10 +99,16 @@
 		cursor: pointer;
 		line-height: 1.5;
 		transition: all 0.3s $cubic;
-		@media (max-width: $minTablet) {
+		@media (max-width: $maxTablet) {
 			font-size: 24px;
 		}
-
+		@media (max-width: $minTablet) {
+			font-size: 20px;
+		}
+		@media (max-width: $maxMobile) {
+			margin: 0 0 20px;
+			grid-row: 1 / 2;
+		}
 		span {
 			z-index: 2;
 			position: relative;

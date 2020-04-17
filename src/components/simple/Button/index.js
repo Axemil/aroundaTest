@@ -11,7 +11,7 @@ const Button = ({ children, href, size="md" }) => (
 				stopCursor
 				${s.button}
 				${size === "sm" ? s.sm : ""}
-				${size === "md" ? s.sm : ""}
+				${size === "md" ? s.md : ""}
 			`}
 		> 
 			<span> { children } </span>
@@ -23,7 +23,7 @@ const Button = ({ children, href, size="md" }) => (
 				stopCursor
 				${s.button}
 				${size === "sm" ? s.sm : ""}
-				${size === "md" ? s.sm : ""}
+				${size === "md" ? s.md : ""}
 			`}
 		>
 			<span> { children } </span>

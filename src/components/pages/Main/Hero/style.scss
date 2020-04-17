@@ -9,6 +9,9 @@
 	@media (max-width: $maxTablet){
 		padding: 230px 0 160px;
 	}
+	@media (max-width: $maxMobile){
+		font-size: 230px 0 135px;
+	}
 }
 .container{
 	grid-column: var(--mainWidth);
@@ -20,6 +23,9 @@
 	}
 	@media (max-width: $minTablet){
 		max-width: 565px;
+	}
+	@media (max-width: $maxMobile){
+		max-width: 345px;
 	}
 }	
 .heroTitle{

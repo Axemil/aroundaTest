@@ -95,7 +95,7 @@ export default class Header extends Component {
 								nav.map(link => (
 									<li key={link.id}>
 										{link.button ? (
-												<Button href={link.href}> {link.name} </Button>
+												<Button href={link.href} size="sm"> {link.name} </Button>
 											) : (
 												<Link 
 													className={`stopCursor ${s.link}`}
