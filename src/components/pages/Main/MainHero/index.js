@@ -4,8 +4,8 @@ import TitleH from "@simple/TitleH";
 
 import s from "./style.scss";
 
-const Hero = () => (
-	<section className={s.hero}>
+const MainHero = () => (
+	<section className={s.mainHero}>
 		<div className={s.container}>
 			<div className={s.heroContent}>
 				<div className={s.heroTitle}>
@@ -17,4 +17,4 @@ const Hero = () => (
 	</section>
 );
 
-export default Hero;
+export default MainHero;

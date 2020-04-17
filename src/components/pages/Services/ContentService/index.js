@@ -1,7 +1,10 @@
 import React from 'react';
 import Observer from "react-intersection-observer";
+
+import TitleH from '@simple/TitleH';
+import ButtonSecondary from '@simple/ButtonSecondary';
+
 import s from './style.scss';
-import TitleSecondary from '@simple/TitleSecondary';
 
 const ContentService = ({id, description, onChange, title, list}) => {
 
@@ -16,13 +19,14 @@ const ContentService = ({id, description, onChange, title, list}) => {
     return (
         <div className={s.content} id={id}>
             <Observer tag='div' className={s.contentWrapper} onChange={changeItem}>
-                <TitleSecondary text={title}/>
+                <TitleH size="h2"> {title} </TitleH>
                 <p className={s.text}>
                     {description}
                 </p>
                 <ul className={s.list}>
                     {list.map((el, i) => <li tabIndex='-1' key={i}><span>{el}</span></li>)}
                 </ul>
+				<ButtonSecondary>Show Cases</ButtonSecondary>
             </Observer>
         </div>
     )

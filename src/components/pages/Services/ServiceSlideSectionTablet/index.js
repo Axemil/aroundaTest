@@ -1,11 +1,11 @@
 import React from 'react';
 import s from './style.scss';
 import data from '@/data/ServiceSlide';
-import ContentServiceTablet from '@simple/ContentServiceTablet';
+import ContentServiceTablet from '../ContentServiceTablet';
 
-const ServiceSlideSectionTablet = (props) => {
+const ServiceSlideSectionTablet = () => {
     return (
-        <section className={s.section}>
+        <section className={s.serviceSlideSectionTablet}>
             {
                 data.map((el, i) => {
                     return (

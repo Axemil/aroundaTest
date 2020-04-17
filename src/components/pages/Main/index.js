@@ -4,7 +4,7 @@ import { TimelineLite } from 'gsap';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import MetaTags from 'react-meta-tags';
 
-import Hero from "./Hero";
+import Hero from "./MainHero";
 import WorksSection from './WorksSection';
 import OurExpertise from "./OurExpertise";
 import ServicesSection from './ServicesSection';

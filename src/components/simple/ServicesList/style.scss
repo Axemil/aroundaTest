@@ -1,0 +1,28 @@
+@import "../../../scss/variables.scss";
+
+.servicesWrapper{
+	max-width: 1048px;
+	margin: 0 auto 100px;
+	display: flex;
+	justify-content: space-between;
+	@media (max-width: $maxTablet){
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+		margin: 0 ;
+		max-width: 740px;
+		grid-row-gap: 65px;
+	}
+	@media (max-width: $maxMobile){
+		grid-template-columns: 1fr 1fr;
+		grid-row-gap: 40px;
+	}
+}
+.item{
+	max-width: 140px;
+}
+.itemIcon{
+	margin: 0 0 25px;
+	@media (max-width: $minTablet){
+		margin: 0 0 20px;
+	}
+}
