@@ -22,6 +22,9 @@ import Layout from "@sections/Layout"
 import PageNotFound from "@pages/PageNotFound"
 import Velonto from "@landing/Velonto"
 import BoldCase from "@case/Bold"
+import MetriclyCase from "@case/Metricly"
+import VelontoCase from "@case/Velonto"
+import GigziCase from "@case/Gigzi"
 import Blog from "@pages/Blog"
 import BlogPostConnected from "@pages/BlogPostConnected"
 
@@ -123,6 +126,9 @@ class App extends Component {
 							<Route path="/services" exact component={Services} />
 							<Route path="/expertise/food-delivery" exact component={Velonto} />
 							<Route path="/boldCase" exact component={BoldCase} />
+							<Route path="/gigziCase" exact component={GigziCase} />
+							<Route path="/metriclyCase" exact component={MetriclyCase} />
+							<Route path="/velontoCase" exact component={VelontoCase} />
 							<Route path="/blog/:id" exact component={BlogPostConnected} />
 							<Route path="/blog" exact component={Blog} />
 							<Route component={PageNotFound} />

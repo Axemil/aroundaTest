@@ -69,6 +69,7 @@
     "normalizr": "^3.4.1",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
+    "react-drag-slider": "^0.1.5",
     "react-hot-loader": "^4.12.20",
     "react-intersection-observer": "^8.24.2",
     "react-mailchimp-subscribe": "^2.1.0",

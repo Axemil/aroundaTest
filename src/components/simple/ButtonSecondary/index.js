@@ -6,7 +6,7 @@ import Plus from "@svg/buttonSecondary/icon_plus.svg";
 
 import s from "./style.scss";
 
-const ButtonSecondary = ({ children, href, icon="arrow" }) => (
+const ButtonSecondary = ({ children, href, icon="arrow", link }) => (
 	href ? (
 		<Link 
 			to={href}
@@ -30,12 +30,12 @@ const ButtonSecondary = ({ children, href, icon="arrow" }) => (
 				${s.button}
 			`}
 		>
-			<span> 
+			<a href={link ? link : ''}> 
 				{ children } 
 				<i className={s.icon}>
 					{ icon === "arrow" ? <Arrow /> : <Plus /> }
 				</i>
-			</span>
+			</a>
 		</button>
 	)	
 );

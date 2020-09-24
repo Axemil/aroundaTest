@@ -33,5 +33,6 @@ const data = [
         type: ['saas',  'corporate websites',]
     },
 ]
-
+//./assets/images/gigzi.jpg
+//./assets/images/bold.jpg
 export default data;
